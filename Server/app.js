@@ -1,6 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
-//const cors=require('cors')
+const cors=require('cors')
 const studentRouter = require('./routes/controller')
 
 
@@ -16,7 +16,7 @@ con.on('open', () =>
 {
 console.log('connected...')
 })
-//app.use(cors())
+app.use(cors())
 app.use(express.json())
 
 app.use('/students',studentRouter)
